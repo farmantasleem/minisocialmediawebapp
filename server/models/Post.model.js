@@ -15,10 +15,11 @@ const PostSchema=mongoose.Schema({
     location:{
         type:String,
     },
-    tags:[ {
-        type:Map,
-        of:String
-    }]
+    tags:[
+        {
+            type:String
+        }
+    ]
 
    
 })

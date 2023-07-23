@@ -1,0 +1,48 @@
+#userInfo{
+    flex-direction: row;
+    align-items: center;
+    justify-items: left;
+    text-align: left;
+    justify-content: flex-start;
+   
+}
+
+#videoContent {
+    position: absolute;
+    bottom: 50px;
+    padding: 20px;
+    text-align: left;
+    justify-content: left;
+    align-items: left;
+    justify-items: left;
+
+}
+#videoContent{
+    margin: auto;
+    color: white;
+}
+
+.videoPlayer{
+    position: relative;
+}
+
+#likeShare{
+    position: absolute;
+    right: 20px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    gap: 20px;
+    bottom: 25%;
+}
+#likeShare * {
+    cursor: pointer;
+}
+
+#prevArrow{
+    cursor: pointer;
+    position: absolute;
+    top: 40px;
+    left: 20px;
+}

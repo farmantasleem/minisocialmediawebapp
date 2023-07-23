@@ -5,6 +5,7 @@ const { Postmodel } = require("../models/Post.model.js");
 const getDataURI = require("../utils/dataUri");
 const cloudinary = require("cloudinary")
 
+// to create post
 exports.createPost = async(req,res)=>{
     const file = req.file
    const fileURI = getDataURI(file)
@@ -30,4 +31,16 @@ exports.createPost = async(req,res)=>{
         res.status(501).send({msg:error.message})
     }
     
+}
+
+// to get all the posts
+
+exports.getAllPost = async(req,res) => {
+    try {
+        const allPost = await Postmodel.find();
+        res.status(200).send({data:allPost})
+        
+    } catch (error) {
+        res.status(5001).send({msg:error.message})
+    }
 }

@@ -17,6 +17,16 @@ export const HomePage =() => {
                     <ImagePost image={"https://picsum.photos/536/354"}/>
                     <ImagePost image={"https://picsum.photos/536/354"}/>
                     <ImagePost size={"postSmall"} image={"https://picsum.photos/536/354"}/>
+                    <ImagePost size={"postMedium"} image={"https://picsum.photos/536/354"}/>
+                    <ImagePost size={"postSmall"} image={"https://picsum.photos/536/354"}/>
+                    <ImagePost image={"https://picsum.photos/536/354"}/>
+                    <ImagePost image={"https://picsum.photos/536/354"}/>
+                    <ImagePost size={"postSmall"} image={"https://picsum.photos/536/354"}/>
+                    <ImagePost size={"postMedium"} image={"https://picsum.photos/536/354"}/>
+                    <ImagePost size={"postSmall"} image={"https://picsum.photos/536/354"}/>
+                    <ImagePost image={"https://picsum.photos/536/354"}/>
+                    <ImagePost image={"https://picsum.photos/536/354"}/>
+                    <ImagePost size={"postSmall"} image={"https://picsum.photos/536/354"}/>
 
                 </div>
        </Container>

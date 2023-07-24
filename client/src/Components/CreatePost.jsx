@@ -2,7 +2,7 @@ import { Modal,ModalOverlay,Button,useDisclosure, ModalContent,ModalHeader,Modal
   } from '@chakra-ui/react'
 import { CgAddR } from 'react-icons/cg'
 import { UploadDrawer } from './UploadDrawer'
-export const CreatePost=()=>{
+export const CreatePost=({image,setImage})=>{
 
         const { isOpen, onOpen, onClose } = useDisclosure()
         return (
@@ -14,7 +14,7 @@ export const CreatePost=()=>{
               <ModalContent maxWidth={{base:"80%",md:"400px"}} justifySelf={"center"} alignSelf={"center"}>
                 <ModalCloseButton />
                 <ModalBody maxWidth={{base:"80vw",md:"400px"}} gap="10px" marginBottom={"40px"} marginTop={"40px"}>
-                   <UploadDrawer/>
+                   <UploadDrawer image={image} setImage={setImage}/>
                     <Button leftIcon={<CgAddR/>} minW={"full"}>  
                         Create a story
                          </Button>

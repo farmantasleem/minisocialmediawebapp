@@ -14,10 +14,15 @@ import {
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { CgAddR } from 'react-icons/cg'
 import { FaCamera, FaImages } from 'react-icons/fa'
-import { NavLink } from 'react-router-dom'
- export  function UploadDrawer() {
+import { NavLink, useNavigate } from 'react-router-dom'
+ export  function UploadDrawer({image,setImage}) {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
+    const navigate=useNavigate()
+    const handlefileSubmit=(e)=>{
+       setImage(e.target.files[0])
+       navigate("/edit")
+    }
   
     return (
       <>
@@ -42,7 +47,7 @@ import { NavLink } from 'react-router-dom'
 
             <DrawerBody padding={"40px"} paddingTop={"0px"} margin={"0px"} backgroundColor={"rgb(248,248,248)"} >
                 <FormLabel fontSize={"1.3rem"} paddingBottom={"10px"} paddingLeft={"20px"} for="img" display={"flex"} alignItems={"center"} gap={"10px"}   w={"full"} borderBottom={"2px"} borderBottomColor={"rgb(236,236,236)"} backgroundColor={"transparent"}>
-                <input type="file"  name="uploadfile" id="img" style={{display:"none"}}/>
+                <input type="file"  onChange={handlefileSubmit}  name="uploadfile" id="img" style={{display:"none"}}/>
                 <FaImages/>
                 <label for="img" >Pick from gallery</label>
 

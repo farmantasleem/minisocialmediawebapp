@@ -1,19 +1,33 @@
 import { Button, Container, Heading, Image, Stack, Text } from "@chakra-ui/react"
 import "../style/EditImage.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { AiOutlineArrowLeft } from "react-icons/ai"
 import none from "../assets/none.png"
-export const EditImage = () => {
+import { NavLink } from "react-router-dom"
+export const EditImage = ({image,setImage}) => {
     const[size,setSize]=useState("postMedium")
-    const[active,setActive]=useState("1:1")
+    const [file, setFile] = useState();
+    function getFile(e) {
+
+        setFile(URL.createObjectURL(image));
+    }
+    useEffect(()=>{
+      if(image){
+          getFile()
+      }
+     
+    },[])
     return (
         <Container minW={"full"} id="editImageContainer">
             <Stack direction={"row"} width={"full"} padding={"15px"} justifyContent={"space-between"}>
-            <AiOutlineArrowLeft fontSize={"2rem"} color="black"/>
-            <Button bgColor={"rgb(0,178,232)"} color={"white"}>Next</Button>
+         <NavLink to={"/"}>   <AiOutlineArrowLeft fontSize={"2rem"} color="black"/></NavLink>
+            <NavLink to={"/addpost"}>            <Button bgColor={"rgb(0,178,232)"} color={"white"}>Next</Button>
+</NavLink>
             </Stack>
             <Container minW={"100%"} borderRadius={"10px"} alignContent={"center"}display={"grid"} justifyItems={"center"} alignItems={"center"} padding={"10px"} minH={"400px"} maxH={"400px"} backgroundColor={"rgb(239,239,239)"}>
-            <Image src="https://picsum.photos/536/354" className={size} width={"90vw"}/>
+            {
+                image?.type!=="video/mp4"?<Image src={file} className={size} width={"90vw"}/>:<video src={file} loop controls autoPlay className={size} width={"90vw"}/>
+            }
             </Container>
             <Text justifyContent={"center"} pt="10px" textAlign={"center"} width={"full"}>Aspect Ratio</Text>
             <Stack direction={"row"} id="sizeContainer">

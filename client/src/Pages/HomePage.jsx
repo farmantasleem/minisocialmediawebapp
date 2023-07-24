@@ -5,10 +5,10 @@ import "../style/HomePage.css"
 import { VideoPost } from "../Components/VideoPost"
 import { ImagePost } from "../Components/ImagePost"
 
-export const HomePage =() => {
+export const HomePage =({image,setImage}) => {
     return(
         <Container minHeight={"200px"} minW={"100vw"} padding="0px">
-                <Header/>
+                <Header image={image} setImage={setImage}/>
                 <div id="container">
                     <VideoPost video={"https://res.cloudinary.com/do7al7kak/video/upload/v1690117665/shkiofyh0upww5ev3de8.mp4"}/>
                     <ImagePost size={"postLarge"} image={"https://picsum.photos/536/354"}/>

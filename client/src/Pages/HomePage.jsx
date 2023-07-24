@@ -7,7 +7,7 @@ import { ImagePost } from "../Components/ImagePost"
 
 export const HomePage =() => {
     return(
-        <Container bgColor={"red"} minHeight={"200px"} minW={"100vw"} padding="0px">
+        <Container minHeight={"200px"} minW={"100vw"} padding="0px">
                 <Header/>
                 <div id="container">
                     <VideoPost video={"https://res.cloudinary.com/do7al7kak/video/upload/v1690117665/shkiofyh0upww5ev3de8.mp4"}/>

@@ -5,6 +5,7 @@ import {FaShare} from "react-icons/fa"
 import "../style/VideoPlayer.css"
 
 import { useEffect, useRef, useState } from "react"
+import { NavLink } from "react-router-dom"
 export const VideoPlayer =({video}) => {
     const[liked,setlike]=useState(false)
     const[currentTime,setcurrentTime]=useState(0)
@@ -26,7 +27,7 @@ export const VideoPlayer =({video}) => {
             <Progress border={"0px"} value={currentTime} />
             <video  id="video" src={video} autoPlay={true} controls="" muted loop></video>
 
-            <AiOutlineArrowLeft color="white" id="prevArrow"/>
+           <NavLink to={"/"}> <AiOutlineArrowLeft color="white" id="prevArrow"/></NavLink>
             <Stack id="likeShare" direction={"column"}>
              
                {

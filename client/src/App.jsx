@@ -6,11 +6,12 @@ import { VideoPage } from './Pages/VideoPage';
 import "./style/HomePage.css"
 import { PostCard } from './Components/PostCard';
 import { PostPage } from './Pages/PostPage';
+import { AllRoutes } from './routes/AllRoutes';
 
 function App() {
  
   return (
-    <PostPage/>
+    <AllRoutes/>
     
   );
 }

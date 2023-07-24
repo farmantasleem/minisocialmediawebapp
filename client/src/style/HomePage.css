@@ -4,7 +4,6 @@ width: 100vw;
    column-gap: 20px;
    break-inside: avoid;
    margin: 20px auto;
-   background-color: green;
 
 }
 #videoContainer {
@@ -21,35 +20,48 @@ width: 100vw;
 html{
     scroll-snap-type: y mandatory;
 }
-
+#container{
+    padding: 20px;
+}
 #container .box {
     width: 100%;
     margin-bottom: 10px;
+  
 }
 
 .postVideoLg{
     height: 400px;
     object-fit: cover;
+    border-radius: 10px;
+}
+#container video{
+    border-radius: 10px;
 }
 
 #container img{
     min-width: 100%;
     max-width: 100%;
+    border-radius: 10px;
     margin: auto;
 }
 
 .postVideoMd{
     height: 200px;
+    border-radius: 10px;
 }
 .postLarge{
     height: 300px;
+    border-radius: 10px;
 }
 .postMedium{
     height: 200px;
+    border-radius: 10px;
 }
 .postSmall{
     height: 150px;
+    border-radius: 10px;
 }
+
 
 .videoPlayer{
     width: 100vw;
@@ -62,6 +74,7 @@ html{
     height: 100vh;
     padding: 0px;
     z-index: 1;
+    
     object-fit: cover;
     border: 2px solid white;
 }

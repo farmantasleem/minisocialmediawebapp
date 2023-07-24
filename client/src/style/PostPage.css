@@ -25,6 +25,7 @@
     position: relative;
     left: 65vw;
     bottom: 60px;
+    cursor: pointer;
 }
 
 
@@ -39,3 +40,12 @@
 #postCardContent{
     padding: 10px;
 }
+
+@media only screen and (min-width: 800px) {
+    .postLike{
+        position: relative;
+        left: 85%;
+        bottom: 60px;
+        cursor: pointer;
+    }
+ }

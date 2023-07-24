@@ -6,7 +6,7 @@ import {CgAddR} from "react-icons/cg"
 export const Header = () => {
     return(
         <Stack bgColor={"white"} direction={"row"} minW={"100%"} justifyContent={"space-between"} padding={"20px"}>
-            <Image src={logo} width={"120px"} height={"40px"}/>
+            <Image src={logo} width={{base:"100px",md:"120px"}} height={"3rem"}/>
             <Stack direction={"row"} alignContent={"center"}>
                   <CgAddR fontSize={"2rem"} style={{margin:"auto"}}/>
                   <BiSearchAlt fontSize={"2rem"}  style={{margin:"auto"}}/> 

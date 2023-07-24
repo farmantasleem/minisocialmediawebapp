@@ -1,0 +1,33 @@
+
+
+#postUser img{
+    height: 60px;
+    width: 60px;
+    border-radius: 20px;
+    object-fit: cover;
+   
+}
+
+#postUser{
+    align-items: center;
+    justify-content: left;
+    padding-bottom: 20px;
+    
+}
+.postPage{
+    gap: 20px;
+  
+}
+
+
+.postImage{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 2px solid black;
+    box-sizing: border-box;
+}
+
+#postCardContent{
+    padding: 10px;
+}

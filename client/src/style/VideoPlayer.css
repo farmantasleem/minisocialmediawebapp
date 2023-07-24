@@ -46,3 +46,12 @@
     top: 40px;
     left: 20px;
 }
+
+@media only screen and (min-width: 800px) {
+   .videoPlayer{
+    width: 100%;
+   }
+   #videoContent{
+    bottom: 10px;
+   }
+}

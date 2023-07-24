@@ -7,13 +7,24 @@ import "../style/VideoPlayer.css"
 import { useEffect, useRef, useState } from "react"
 export const VideoPlayer =({video}) => {
     const[liked,setlike]=useState(false)
-    const[timer,setTimer]=useState(0)
-    
-  
+    const[currentTime,setcurrentTime]=useState(0)
+    const[remainingTime,setremainingTime]=useState(60)
+    const[totaltime,settotaltime]=useState(60)
+    function countDown(){
+           if(remainingTime>0){
+            setcurrentTime(()=>((totaltime-remainingTime)/totaltime)*100)
+            setremainingTime((prev)=>prev-1)
+            setTimeout(countDown,1000)
+           }
+    }
+  useEffect(()=>{
+ 
+    countDown()
+  },[])
     return(
         <div className="videoPlayer">
-            <Progress border={"0px"} value={0} />
-            <video  src={video} autoPlay={true} controls="" muted loop></video>
+            <Progress border={"0px"} value={currentTime} />
+            <video  id="video" src={video} autoPlay={true} controls="" muted loop></video>
 
             <AiOutlineArrowLeft color="white" id="prevArrow"/>
             <Stack id="likeShare" direction={"column"}>

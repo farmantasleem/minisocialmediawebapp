@@ -59,7 +59,7 @@ html{
    
 }
 .videoPlayer video {
-   height: 100vh;
+    height: 100vh;
     padding: 0px;
     z-index: 1;
     object-fit: cover;

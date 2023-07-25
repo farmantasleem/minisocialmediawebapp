@@ -28,7 +28,7 @@ export const HomePage =({image,setImage}) => {
 
                     {
                         postData?.map((e)=>{
-                            return e.contentType=="image"?<ImagePost key={e._id} size={e.size} image={e.content?.url}/>:<VideoPost key={e._id}  video={e.content.url}/>
+                            return e.contentType=="image"?<ImagePost _id={e._id} key={e._id} size={e.size} image={e.content?.url}/>:<VideoPost _id={e._id} key={e._id}  video={e.content.url}/>
                         })
                     }
                  

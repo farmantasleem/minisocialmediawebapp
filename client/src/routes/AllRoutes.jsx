@@ -12,14 +12,14 @@ import {getData} from "../helper/helper"
 
 export const AllRoutes = () =>{
     const[image,setImage]=useState()
-    const[postData,setpostData]=useState([])
+   
   
   
     return(
         <Routes>
-            <Route path="/" element={<HomePage postData={postData} image={image} setImage={setImage}/>}/>
-            <Route path="/video" element={<VideoPage postData={postData} image={image} setImage={setImage}/>}/>
-            <Route path="/post" element={<PostPage postData={postData} image={image} setImage={setImage}/>}/>
+            <Route path="/" element={<HomePage image={image} setImage={setImage}/>}/>
+            <Route path="/video/:id" element={<VideoPage image={image} setImage={setImage}/>}/>
+            <Route path="/post/:id" element={<PostPage image={image} setImage={setImage}/>}/>
             <Route path="/edit" element={<EditImage  image={image} setImage={setImage}/>}/>
             <Route path="/addpost/:size" element={<AddPost image={image}/>}/>
         </Routes>

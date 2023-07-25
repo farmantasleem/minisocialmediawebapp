@@ -52,7 +52,7 @@ export const AddPost = ({image}) => {
          
             <Stack direction={"row"} gap={"10px"} width={"full"} padding={"15px"} justifyContent={"space-between"}>
                 <NavLink to={"/edit"}>   <AiOutlineArrowLeft fontSize={"2rem"} color="black" /></NavLink>
-                <Button bgColor={"rgb(0,178,232)"} _active={{}} _focus={{}} color={"white"} onClick={publishPost} isLoading={isLoading}>Publish</Button>
+                <Button bgColor={"rgb(0,178,232)"} _hover={{backgroundColor:"black"}} _active={{backgroundColor:"black"}} _focus={{}} color={"white"} onClick={publishPost} isLoading={isLoading}>Publish</Button>
             </Stack>
             <Image src={file} width={"6rem"} borderRadius={"10px"} height={"5rem"}/>
            

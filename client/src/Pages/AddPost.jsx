@@ -11,12 +11,14 @@ import axios from "axios"
 export const AddPost = ({image}) => {
     const [file, setFile] = useState();
     const[inputField,setInputField]=useState("")
+    const[isLoading,setLoading]=useState(false)
     const {size} = useParams()
     const navigate=useNavigate()
     const publishPost =async()=>{
-
+        setLoading(true)
        const formData= new FormData();
        if(!image || !inputField || !size){
+        setLoading(false)
             return alert("All input are required")
        }
        formData.append("file",image)
@@ -28,7 +30,8 @@ export const AddPost = ({image}) => {
                 navigate("/")
             }
         } catch (error) {
-            
+            alert("There's some error")
+            setLoading(false)
         }
         
     }
@@ -49,7 +52,7 @@ export const AddPost = ({image}) => {
          
             <Stack direction={"row"} gap={"10px"} width={"full"} padding={"15px"} justifyContent={"space-between"}>
                 <NavLink to={"/edit"}>   <AiOutlineArrowLeft fontSize={"2rem"} color="black" /></NavLink>
-                <Button bgColor={"rgb(0,178,232)"} color={"white"} onClick={publishPost}>Publish</Button>
+                <Button bgColor={"rgb(0,178,232)"} color={"white"} onClick={publishPost} isLoading={isLoading}>Publish</Button>
             </Stack>
             <Image src={file} width={"6rem"} borderRadius={"10px"} height={"5rem"}/>
            

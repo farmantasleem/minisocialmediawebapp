@@ -3,7 +3,7 @@ import {BsThreeDots} from "react-icons/bs"
 import user from "../assets/users.png"
 import {AiOutlineHeart,AiFillHeart as LikedIcon} from "react-icons/ai"
 import { useState } from "react"
-export const PostCard =({image,size}) =>{
+export const PostCard =({image,size="postMedium",description}) =>{
     const[liked,setlike]=useState(false)
 
     return(
@@ -34,7 +34,7 @@ export const PostCard =({image,size}) =>{
                </Text>
                </Stack>
                <Text>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. At sit cum est, nulla vel minus excepturi nihil ratione voluptas veniam.
+                    {description||""}
                </Text>
             </Stack>
         </Container>

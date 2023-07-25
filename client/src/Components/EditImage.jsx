@@ -20,9 +20,9 @@ export const EditImage = ({image,setImage}) => {
     return (
         <Container minW={"full"} id="editImageContainer">
             <Stack direction={"row"} width={"full"} padding={"15px"} justifyContent={"space-between"}>
-         <NavLink to={"/"}>   <AiOutlineArrowLeft fontSize={"2rem"} color="black"/></NavLink>
-            <NavLink to={"/addpost"}>            <Button bgColor={"rgb(0,178,232)"} color={"white"}>Next</Button>
-</NavLink>
+         <NavLink to={"/"}><AiOutlineArrowLeft fontSize={"2rem"} color="black"/></NavLink>
+            <NavLink to={`/addpost/${size}`}><Button bgColor={"rgb(0,178,232)"} color={"white"}>Next</Button>
+         </NavLink>
             </Stack>
             <Container minW={"100%"} borderRadius={"10px"} alignContent={"center"}display={"grid"} justifyItems={"center"} alignItems={"center"} padding={"10px"} minH={"400px"} maxH={"400px"} backgroundColor={"rgb(239,239,239)"}>
             {

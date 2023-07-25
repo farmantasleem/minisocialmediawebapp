@@ -1,16 +1,28 @@
 import { Container } from "@chakra-ui/react"
 import { Header } from "../Components/Header"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { VideoPlayer } from "../Components/VideoPlayer"
 import "../style/HomePage.css"
+import axios from "axios"
 export const VideoPage =() => {
-    const[data,setdata]=useState([1,2,3,4,5,6,7,8])
+    const[postData,setPostData]=useState([])
+    const getData = async ()=>{
+        const resp=await axios.get("https://minisocialmedia.onrender.com/post")
+        setPostData(resp.data.data)
+    }
+  
+    useEffect(()=>{
+        if(postData.length<1){
+            getData()
+        }
+            
+    },[])
     return(
        
-         <Container id="videoContainer" bgColor={"green"} height={"100vh"} mt={"0px"} width={{base:"100vw",md:"400px"}}>
+         <Container id="videoContainer" height={"100vh"} mt={"0px"} width={{base:"100vw",md:"400px"}}>
             {
-                data.map((e)=>{
-                    return <VideoPlayer key={e}  video={"https://res.cloudinary.com/do7al7kak/video/upload/v1690117665/shkiofyh0upww5ev3de8.mp4"}/>
+                postData?.filter((e)=>e.contentType=="video")?.map((e)=>{
+                    return <VideoPlayer key={e} video={e.content.url}/>
                 })
             }
         </Container>

@@ -12,7 +12,6 @@ width: 100vw;
     padding: 0px;
     flex-direction: column;
     scroll-snap-type: y mandatory;
-    background-color: blue;
     height: 100vh;
     overflow: scroll;
 }
@@ -53,15 +52,18 @@ html{
     height: 300px;
     width: 200px;
     border-radius: 10px;
+    object-fit: cover;
 }
 .postMedium{
     width: 200px;
     height: 200px;
     border-radius: 10px;
+    object-fit: cover;
 }
 .postSmall{
     height: 150px;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 

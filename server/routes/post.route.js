@@ -1,5 +1,5 @@
 const express = require("express");
-const { createPost, getAllPost } = require("../controllers/Post.controller");
+const { createPost, getAllPost } = require("../controllers/post.controller");
 const singleUpload = require("../middleware/multer");
 
 const postRoute = express.Router();

@@ -1,8 +1,5 @@
-
-// create post 
-
 const { Postmodel } = require("../models/Post.model.js");
-const getDataURI = require("../utils/dataUri");
+const getDataURI = require("../utils/dataUri.js");
 const cloudinary = require("cloudinary")
 
 // to create post

@@ -10,9 +10,8 @@ const bodyParser=require("body-parser");
 
 app.use(express.json());
 app.use(cors());
-app.use(bodyParser.urlencoded({extended:true}))
-
-app.use("/post",postRoute)
+app.use(express.urlencoded({extended:false}))
+app.use("/post",postRoute) 
 cloudinary.v2.config({
     cloud_name: process.env.CLD_CLIENT_NAME, 
     api_key:process.env.CLD_CLIENT_API, 

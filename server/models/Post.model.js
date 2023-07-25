@@ -8,6 +8,11 @@ const PostSchema=mongoose.Schema({
     contentType:{
         type:String
     },
+    size:{
+        type:String,
+        default:"m"
+    }
+    ,
     description:{
         type:String,
         default:""
@@ -15,11 +20,10 @@ const PostSchema=mongoose.Schema({
     location:{
         type:String,
     },
-    tags:[
-        {
-            type:String
-        }
-    ]
+    tags:{
+        type:Array,
+        default:[]
+    }
 
    
 })

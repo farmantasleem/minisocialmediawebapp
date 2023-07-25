@@ -7,23 +7,26 @@ const cloudinary = require("cloudinary")
 
 // to create post
 exports.createPost = async(req,res)=>{
-    const file = req.file
+   if(!req.body || !req.body.description || !req.body.size || !req.file){
+    return res.status(404).send({msg:"All Input Fields are required"})
+   } 
+   const file = req.file
    const fileURI = getDataURI(file)
    console.log(fileURI.extName)
    
     try {
         const mycloud=await cloudinary.v2.uploader.upload(fileURI.data.content,{
-            resource_type:"raw"
+            resource_type:fileURI.extName.toUpperCase().includes("MP4")?"video":"image"
         })
         const newData= Postmodel({
-            contentType:fileURI.extName==".PNG" || fileURI.extName==".JPG" ?"image":"video",
-            tag:[{
-                tag:"travel"
-            }],
+            contentType:fileURI.extName.toUpperCase().includes("MP4")?"video":"image",
+            tag:["Other"],
             content:{
                 public_id:mycloud.public_id,
                 url:mycloud.url,
-            }
+            },
+            size:req.body.size,
+            description:req.body.description
         })
         await newData.save()
         res.send({msg:"Post create Successfully"})

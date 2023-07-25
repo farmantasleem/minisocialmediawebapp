@@ -6,7 +6,7 @@ require("dotenv").config();
 const cloudinary = require("cloudinary")
 const app = express();
 const bodyParser=require("body-parser");
-
+const PORT=process.env.PORT||8081
 
 app.use(express.json());
 app.use(cors());
@@ -19,6 +19,6 @@ cloudinary.v2.config({
 })
 
 connectDatabase()
-app.listen(8081,()=>{
+app.listen(PORT,()=>{
     console.log("server started on port no 8081")
 })

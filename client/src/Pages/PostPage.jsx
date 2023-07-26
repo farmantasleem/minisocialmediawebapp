@@ -11,7 +11,7 @@ export const PostPage =() => {
     const {id}=useParams()
     const[found,setFound]=useState(false)
     const getData = async ()=>{
-        const resp=await axios.get("https://minisocialmedia.onrender.com/post")
+        const resp=await axios.get("https://rose-jittery-turtle.cyclic.app/post")
         setPostData(resp.data.data)
        
        

@@ -25,7 +25,7 @@ export const AddPost = ({image}) => {
        formData.append("description",inputField)
        formData.append("size",size)
         try {
-            const resp = await axios.post("https://minisocialmedia.onrender.com/post",formData)
+            const resp = await axios.post("https://rose-jittery-turtle.cyclic.app/post",formData)
             if(resp.status=="200"){
                 navigate("/")
             }

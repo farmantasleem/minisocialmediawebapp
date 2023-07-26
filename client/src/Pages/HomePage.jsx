@@ -11,7 +11,7 @@ import axios from "axios"
 export const HomePage =({image,setImage}) => {
     const[postData,setPostData]=useState([])
     const getData = async ()=>{
-        const resp=await axios.get("https://minisocialmedia.onrender.com/post")
+        const resp=await axios.get("https://rose-jittery-turtle.cyclic.app/post")
         setPostData(resp.data.data)
     }
   

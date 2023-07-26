@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom"
 export const VideoPlayer =({video}) => {
     const {ref,inView} =useInView()
     const[liked,setlike]=useState(false)
-    const[isPlaying,setisPlaying]=useState(true)
+    const[isPlaying,setisPlaying]=useState(false)
     const pausePlay=(e)=>{
         if(isPlaying){
           e.target.pause()
